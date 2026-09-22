@@ -8,7 +8,8 @@ metadata:
   modified: 2026-09-21T19:55:34.603Z
 ---
 
-2026-09-22 实测，为 extra-novel 项目调研《爵迹》时摸出来的来源可达性：
+2026-09-22 实测，为 extra-novel 项目调研《爵迹》时摸出来的来源可达性。
+**先用自建 MCP `fetch-zh`（`mcp__fetch-zh__fetch` / `fetch_batch`）**：下面 curl 能通的站它都能通，且字符集正确、可批量；只有知乎、贴吧仍须 Chrome。以下按站点：
 
 - **百度百科**：`baike.baidu.com` 对 curl 与 WebFetch 一律 403（安全验证）；改用移动版 `wapbaike.baidu.com/item/<词条>` 加手机 UA，curl 可直接取到正文。
 - **维基百科**：`zh.wikipedia.org/w/index.php?title=<词条>&action=raw` 取原始维基文本，比 WebFetch 的小模型摘要完整得多；分册没有独立词条，用 API 的 `list=search` 找真实标题。
